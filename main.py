@@ -75,7 +75,7 @@ def print_bill(order, total):
     for item in order:
         print(f"{item['item']:<18} {item['qty']:<8} ${item['price'] * item['qty']:<8}")
     print("------------------------------------------------")
-    print(f"{'Total:':<28} ${total:<8}")
+    print(f"{'Total:':<28} Rs. {total:<8}")
     print("------------------------------------------------")
     print("          Thank you for dining with us!")
     print("------------------------------------------------")
