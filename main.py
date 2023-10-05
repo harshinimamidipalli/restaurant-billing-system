@@ -1,7 +1,6 @@
 import datetime
 import random
 
-# Global Menu Items (You can add them from the previous example)
 menu_items = [
     {'id': 1, 'name': 'Idli', 'price': 40},
     {'id': 2, 'name': 'Dosa', 'price': 50},
@@ -27,12 +26,12 @@ menu_items = [
 
 # Step 1: Display Static Menu
 def display_menu():
-    print("----- Welcome to XYZ Restaurant -----")
+    print("              ----- Welcome to CMRIT Cafe -----              ")
     for i in range(0, len(menu_items), 2):
         item1 = menu_items[i]
         item2 = menu_items[i + 1] if i + 1 < len(menu_items) else {'id': '', 'name': '', 'price': ''}
-        print(f"{item1['id']:<3} {item1['name']:<12} {item1['price']:<5} || "
-              f"{item2['id']:<3} {item2['name']:<12} {item2['price']:<5}")
+        print(f"{item1['id']:<5} {item1['name']:<16} {item1['price']:<5} || "
+              f"{item2['id']:<5} {item2['name']:<18} {item2['price']:<12}")
     
     print("0. Exit")
 
@@ -40,10 +39,10 @@ def display_menu():
 def take_order():
     order = []
     while True:
-        choice = int(input("Enter the item ID to add to your order (0 to finish): "))
+        choice = int(input("Enter the item's ID that you want to order: "))
         if choice == 0:
             break
-        quantity = int(input(f"Enter the quantity of the selected item: "))
+        quantity = int(input(f"Enter the quantity of the item: "))
         if choice <= len(menu_items) and choice >= 1:
             item = {
                 'item': menu_items[choice - 1]['name'],
@@ -61,21 +60,21 @@ def calculate_total(order):
 
 # Step 4: Print Bill
 def print_bill(order, total):
-    current_time = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-    order_number = random.randint(1000, 9999)
+    current_time = datetime.datetime.now().strftime("%d-%m-%Y  %I:%M:%S %p")
+    order_number = random.randint(1,10)
     
     print("------------------------------------------------")
-    print("                  XYZ Restaurant")
+    print("                  * CMRIT Cafe *")
     print("------------------------------------------------")
     print(f"Order Number: {order_number:<28}")
     print(f"Date and Time: {current_time:<24}")
     print("------------------------------------------------")
-    print(f"{'Item':<18} {'Quantity':<8} {'Price':<8}")
+    print(f"{'Item':<14}  {'Quantity':<12}  {'Price':<12}")
     print("------------------------------------------------")
     for item in order:
-        print(f"{item['item']:<18} {item['qty']:<8} Rs. {item['price'] * item['qty']:<8}")
+        print(f"{item['item']:<18} {item['qty']:<8} Rs. {item['price'] * item['qty']:<14}")
     print("------------------------------------------------")
-    print(f"{'Total:':<28} Rs. {total:<8}")
+    print(f"{'Total :':<28} Rs. {total:<8}")
     print("------------------------------------------------")
     print("          Thank you for dining with us!")
     print("------------------------------------------------")
