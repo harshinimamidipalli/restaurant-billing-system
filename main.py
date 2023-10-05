@@ -81,7 +81,7 @@ def print_bill(order, total):
     print("------------------------------------------------")
 
 # Main Program
-if _name_ == "_main_":
+if __name__ == "__main__":
     display_menu()
     order = take_order()
     total = calculate_total(order)
