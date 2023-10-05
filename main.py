@@ -73,7 +73,7 @@ def print_bill(order, total):
     print(f"{'Item':<18} {'Quantity':<8} {'Price':<8}")
     print("------------------------------------------------")
     for item in order:
-        print(f"{item['item']:<18} {item['qty']:<8} ${item['price'] * item['qty']:<8}")
+        print(f"{item['item']:<18} {item['qty']:<8} Rs. {item['price'] * item['qty']:<8}")
     print("------------------------------------------------")
     print(f"{'Total:':<28} Rs. {total:<8}")
     print("------------------------------------------------")
